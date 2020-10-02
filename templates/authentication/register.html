@@ -1,4 +1,44 @@
 {% extends 'base_auth.html' %}
+{% load static %}
 {% block content %}
-    <h1>Login</h1>
+<div class="card mt-5">
+    <div class="card-body">
+        <h6 class="text-center mb-3">Create an account</h6>
+        <form method="POST">
+            {% csrf_token %}
+            {% include 'partials/_messages.html' %}
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+            </div>
+            <div class="user-feedback text-danger" style="display: none;"></div>
+            <p class="text-sm text-success usernameSuccessOutput"></p>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+            </div>
+            <div class="email-feedback text-danger" style="display: none;"></div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">    
+                <small class="float-right py-3 showPasswordToggle">Show</small>
+            </div>
+            
+
+            <div class="form-group mt-20 mb-3 row">
+                <div class="col-12 text-right">
+                    <input type="submit" class="btn btn-primary btn-block" data-id="dashboard" value="Submit">
+                </div>
+            </div>
+        </form>
+        <div class="divider">OR</div>
+        <div class="form-group">
+            <button class="btn btn-primary-soft btn-block mgn-b-10">Sign in With Facebook</button>
+            <button class="btn btn-info-soft btn-block mgn-b-5">Sign in With Twitter</button>
+        </div>
+        <div class="form-group mb-0 mt-2">
+            <div class="col-12 text-center text-muted text-signup">
+                Already have an account? <a href="login.html" class="text-info">Sign in</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/register.js' %}"></script>
 {% endblock %}

@@ -1,4 +1,46 @@
 {% extends 'base_auth.html' %}
+{% load static %}
 {% block content %}
-    <h1>Login</h1>
+    <div class="login-form">
+        <div class="card mt-5">
+            <div class="card-body">
+                <h6 class="text-center mb-3">Sign in to your account</h6>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="row form-group mt-3">
+                        <div class="col-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Remember Me!</label>
+                            </div>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="#" class="text-forgot"><i class="icon-lock"></i> Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group my-3 row">
+                        <div class="col-12 text-right">
+                            <input type="submit" class="btn btn-primary btn-block" data-id="dashboard" value="Submit">
+                        </div>
+                    </div>
+                </form>
+                <div class="divider">OR</div>
+                <div class="form-group">
+                    <button class="btn btn-primary-soft btn-block mgn-b-10">Sign in With Facebook</button>
+                    <button class="btn btn-info-soft btn-block mgn-b-5">Sign in With Twitter</button>
+                </div>
+                <div class="form-group mb-0 mt-2">
+                    <div class="col-12 text-center text-muted text-signup">
+                        Don't have an account? <a href="register.html" class="text-info">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
