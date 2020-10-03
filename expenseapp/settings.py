@@ -129,3 +129,16 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MESSAGE_TAGS={
     messages.ERROR:'danger'
 }
+
+#Email Stuff
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'ccec7c200aa4f1'
+EMAIL_HOST_PASSWORD = 'e80f36c1beb6e9'
+DEFAULT_FROM_EMAIL='test@test.com'
+EMAIL_PORT = '2525'
+EMAIL_USE_TLS = True
+
+
+
+   

@@ -8,23 +8,23 @@
             {% csrf_token %}
             {% include 'partials/_messages.html' %}
             <div class="form-group">
-                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                <input type="text" class="form-control" id="username" name="username" value="{{fieldValues.username}}" placeholder="Username">
             </div>
             <div class="user-feedback text-danger" style="display: none;"></div>
             <p class="text-sm text-success usernameSuccessOutput"></p>
             <div class="form-group">
-                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+                <input type="email" class="form-control" id="email" name="email" value="{{fieldValues.email}}" placeholder="E-mail">
             </div>
             <div class="email-feedback text-danger" style="display: none;"></div>
             <div class="form-group">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">    
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="{{fieldValues.password}}">    
                 <small class="float-right py-3 showPasswordToggle">Show</small>
             </div>
             
 
             <div class="form-group mt-20 mb-3 row">
                 <div class="col-12 text-right">
-                    <input type="submit" class="btn btn-primary btn-block" data-id="dashboard" value="Submit">
+                    <input type="submit" class="btn btn-primary btn-block submit" data-id="dashboard" value="Submit">
                 </div>
             </div>
         </form>

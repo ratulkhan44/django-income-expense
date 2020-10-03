@@ -5,6 +5,7 @@ const emailFeedback=document.querySelector(".email-feedback")
 const usernameSuccessOutput=document.querySelector(".usernameSuccessOutput")
 const password=document.querySelector("#password")
 const showPasswordToggle=document.querySelector(".showPasswordToggle")
+const submit=document.querySelector(".submit")
 
 const handleToggleInput=(e)=>{
     if(showPasswordToggle.textContent==="Show"){
@@ -38,6 +39,9 @@ username.addEventListener("keyup",(e)=>{
                 username.classList.add("is-invalid")
                 userFeedback.style.display="block";
                 userFeedback.innerHTML=`<p>${data.username_error}</p>`
+                submit.disabled=true
+            }else {
+                submit.removeAttribute("disabled")
             }
         })
     }
@@ -58,6 +62,9 @@ email.addEventListener("keyup",(e)=>{
                 email.classList.add('is-invalid')
                 emailFeedback.style.display="block"
                 emailFeedback.innerHTML=`<p>${data.email_error}</p>`
+                submit.disabled=true
+            }else {
+                submit.removeAttribute("disabled")
             }
         })
 
